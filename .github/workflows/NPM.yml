@@ -35,11 +35,11 @@ jobs:
           registry-url: https://registry.npmjs.org
 
       - name: Unpublish to NPM
-        run: npm unpublish bsblog-images@1.0.1 --force || true
+        run: npm unpublish bsblog-images@1.0.1 --force
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: Publish to NPM
-        run: npm publish || true
+        run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
