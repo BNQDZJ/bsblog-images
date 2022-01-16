@@ -7,17 +7,5 @@
       "test": "echo \"Error: no test specified\" && exit 1"
     },
     "author": "",
-    "license": "MIT",
-    "autoupdate": {
-        "source": "git",
-        "target": "git://github.com/BNQDZJ/bsblog-images.git",
-        "fileMap": [
-          {
-            "basePath": "lib",
-            "files": [
-              "*.*"
-            ]
-          }
-        ]
-      }
+    "license": "MIT"
   }
