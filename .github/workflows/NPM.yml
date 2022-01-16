@@ -2,9 +2,9 @@ name: NPM Publish
 
 on:
   push:
-    branches: [ main ]
+    branches: [  ]
   pull_request:
-    branches: [ main ]
+    branches: [  ]
 
 jobs:
   publish-to-npm:
@@ -33,11 +33,6 @@ jobs:
         with:
           node-version: 12
           registry-url: https://registry.npmjs.org
-
-      - name: Unpublish to NPM
-        run: npm unpublish bsblog-images --force || true
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
           
       - name: Publish to NPM
         run: npm publish || true
