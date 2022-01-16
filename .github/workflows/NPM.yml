@@ -34,6 +34,11 @@ jobs:
           node-version: 12
           registry-url: https://registry.npmjs.org
 
+      - name: Unpublish to NPM
+        run: npm unpublish bsblog-images --force || true
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          
       - name: Publish to NPM
         run: npm publish || true
         env:
