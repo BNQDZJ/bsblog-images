@@ -6,10 +6,8 @@ before_deploy: npm version patch
 deploy:
   provider: npm
   email: 3189821534@qq.com
-  skip_cleanup: true
-  api_key:
-    secure: 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
+  api_key:${{ secrets.NPM_TOKEN }}
   on:
     tags: true
     branch: main
-  tag: latest
+  tag: next
