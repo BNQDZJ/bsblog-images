@@ -1,0 +1,15 @@
+language: node_js
+node_js:
+  - '17'
+script: npm run lint && npm test
+before_deploy: npm run build
+deploy:
+  provider: npm
+  email: 3189821534@qq.com
+  skip_cleanup: true
+  api_key:
+    secure: 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
+  on:
+    tags: true
+    branch: main
+  tag: latest
