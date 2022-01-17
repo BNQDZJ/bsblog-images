@@ -1,8 +1,8 @@
 language: node_js
 node_js:
   - '17'
-script: npm run lint && npm test
-before_deploy: npm run build
+script: npm publish
+before_deploy: npm version patch
 deploy:
   provider: npm
   email: 3189821534@qq.com
