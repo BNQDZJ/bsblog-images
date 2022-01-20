@@ -1,0 +1,14 @@
+language: node_js
+node_js:
+  - '8'
+script: npm publish
+before_deploy: npm version patch
+deploy:
+  provider: npm
+  email: "EMAIL_ADDRESS"
+  skip_cleanup: true
+  api_key:"NPM_TOKEN"
+  on:
+    tags: true
+    branch: main
+  tag: latest
