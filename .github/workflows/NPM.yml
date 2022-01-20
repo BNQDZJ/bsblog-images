@@ -6,11 +6,10 @@ on:
   pull_request:
     branches: [ main ]
     
-    paths-ignore:   # 下列文件的变更不触发部署，可以自行添加
+    paths-ignore:
       - README.md
       - LICENSE
       - package.json
-
 
 jobs:
   publish-to-npm:
