@@ -2,9 +2,9 @@ name: NPM Publish
 
 on:
   push:
-    branches: [ main ]
+    branches: master
   pull_request:
-    branches: [ main ]
+    branches: master
 
 jobs:
   publish-to-npm:
@@ -34,18 +34,6 @@ jobs:
           node-version: 16
           registry-url: https://registry.npmjs.org
           
-      - name: GitHub Account
-        run: git config --global user.email "64721413+BNQDZJ@users.noreply.github.com" && git config --global user.name "bnqdzj"
-        env:
-          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
-          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
-          
-      - name: NPM version
-        run: npm version prerelease
-        env:
-          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
-          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
-         
       - name: Publish to NPM
         run: npm publish
         env:
